@@ -50,7 +50,7 @@ size_t zd_realloc(zd_mem_buffer *m, size_t n){
 
 size_t zd_free(zd_mem_buffer *m){
 
-  int n=0;
+  size_t n=0;
   
   if(m->size >0){
     free(m->buffer);
@@ -78,7 +78,7 @@ size_t zd_memcpy(zd_mem_buffer *m, void *data, size_t n){
 
 int ZEXPORT dread_file(FILE *input, zd_mem_buffer* buffer){
 
-  int nbread;
+  size_t nbread;
 
   assert(input!=NULL);
   assert(buffer!=NULL);

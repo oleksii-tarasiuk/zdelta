@@ -126,7 +126,7 @@ int ZEXPORT zd_compress1(const Bytef *ref, uLong rsize,
 
     /* restore zstream internal pointer */
     strm.next_out = (uch*)dbuf.pos;
-    strm.avail_out = dbuf.size - strm.total_out;
+    strm.avail_out = (uInt)(dbuf.size - strm.total_out);
   }
 
   /* set correcty the mem_buffer pointers */
@@ -383,7 +383,7 @@ int ZEXPORT zd_uncompress1(const Bytef *ref, uLong rsize,
 
     /* restore zstream internal pointer */
     strm.next_out = tbuf.pos; 
-    strm.avail_out = tbuf.size - strm.total_out;
+    strm.avail_out = (uInt)(tbuf.size - strm.total_out);
   }
 
   /* set correctly the mem_buffer internal pointer */
